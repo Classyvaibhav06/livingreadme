@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -6,9 +5,7 @@ import {
   useTransform,
 } from "framer-motion";
 import {
-  Play,
   ArrowRight,
-  Lock,
   Sparkles,
   ChevronRight,
   FileText,
@@ -66,8 +63,6 @@ const MODES = [
 ];
 
 export default function Hero() {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const { scrollY } = useScroll();
@@ -81,38 +76,6 @@ export default function Hero() {
         marginLeft: inset,
         marginRight: inset,
       };
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
-      setIsPlaying(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const handleClick = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play().catch(console.error);
-      setIsPlaying(true);
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleClick();
-    }
-  };
 
   return (
     <main id="hero">
@@ -208,65 +171,9 @@ export default function Hero() {
       </motion.section>
 
       {/* Demo band */}
-      <section className={`relative pt-24 lg:pt-36 ${SECTION_X}`}>
-        <Reveal blur={6} y={40} className="relative mx-auto max-w-5xl">
-          <div className="animate-pulse-slow absolute -inset-1 top-0 right-0 left-0 rounded-2xl bg-gradient-to-r from-[#209BFF] to-[#54A1FD] opacity-20 blur" />
-
-          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
-            <div className="flex items-center gap-4 border-b border-slate-200 bg-slate-100 px-4 py-3">
-              <div className="flex shrink-0 gap-2">
-                <div className="h-3 w-3 rounded-full bg-red-400" />
-                <div className="h-3 w-3 rounded-full bg-amber-400" />
-                <div className="h-3 w-3 rounded-full bg-emerald-400" />
-              </div>
-              <div className="flex flex-1 items-center justify-center gap-1 rounded-md bg-white py-1 pr-20 font-mono text-xs text-slate-400">
-                <Lock size={10} className="shrink-0" />
-                livingreadme.com
-              </div>
-            </div>
-
-            <div
-              role="button"
-              tabIndex={0}
-              aria-label={isPlaying ? "Pause demo video" : "Play demo video"}
-              aria-pressed={isPlaying}
-              className="relative aspect-video w-full cursor-pointer overflow-hidden bg-slate-900"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleClick}
-              onKeyDown={handleKeyDown}
-            >
-              <video
-                ref={videoRef}
-                src="https://pub-e788e87cb08043ab80dcbe889ea20c84.r2.dev/uploads/6938711c1aafcfa552a1d8ef/0e27fe3948b7dddab65cd51143e7212f40ba6efaad7c1282d1527cbe3fde92fb%2B27"
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="h-full w-full object-cover"
-              />
-              <img
-                src="/landing.png"
-                alt="Demo thumbnail"
-                className={`absolute inset-0 z-10 h-full w-full object-cover transition-opacity duration-300 ${isPlaying ? "opacity-0" : "opacity-100"}`}
-              />
-              <div
-                className={`pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-black/10 transition-opacity duration-300 ${isPlaying ? "opacity-0" : "opacity-100"}`}
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/20 shadow-lg backdrop-blur-md">
-                  <Play
-                    size={28}
-                    className="ml-1 text-white"
-                    fill="currentColor"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
+      <section className={`relative pt-16 lg:pt-24 ${SECTION_X}`}>
         <Reveal>
-          <p className="mx-auto mt-16 max-w-2xl text-center text-lg leading-relaxed font-light tracking-[-0.012em] text-slate-600 lg:mt-20">
+          <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed font-light tracking-[-0.012em] text-slate-600">
             LivingREADME reads your repository, writes the README, and patches
             only the sections your code actually changed.
           </p>
