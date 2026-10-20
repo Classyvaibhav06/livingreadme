@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="docs/images/banner.jpg" alt="LivingREADME banner: a README pull request raised by LivingREADME on the painted LivingREADME background" width="100%" />
-</p>
+<h1 align="center">LivingREADME</h1>
 
 <p align="center">
   Connect a GitHub repo once, and every push to main comes back as an up-to-date README.<br>
@@ -15,50 +13,28 @@
   <a href="#roadmap">Roadmap</a>
 </h4>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Node.js-20+-5fa04e.svg" alt="Node.js 20+" />
-  <img src="https://img.shields.io/badge/React-19-149eca.svg" alt="React 19" />
-  <img src="https://img.shields.io/badge/Next.js-16-black.svg" alt="Next.js 16" />
-  <img src="https://img.shields.io/badge/Express-5-444444.svg" alt="Express 5" />
-  <img src="https://img.shields.io/badge/BullMQ-Redis-dc382d.svg" alt="BullMQ on Redis" />
-  <img src="https://img.shields.io/badge/Convex-live_logs-f3b01c.svg" alt="Convex live logs" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="AGPL-3.0 licensed" /></a>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
-</p>
-
-LivingREADME keeps your README in step with your code. It listens for pushes to your default branch, reads what changed, and decides whether the README needs a full rewrite or only a few sections touched. Then it writes the update with Gemini (or Sarvam AI when Gemini is busy) and commits it back to the repo, or opens a pull request if you'd rather review it first. You watch each run step by step from the dashboard.
-
-<p align="center">
-  <img src="docs/images/dashboard.jpg" alt="The LivingREADME dashboard: repository cards with auto-update toggles, commit type and AI priority controls" width="100%" />
-</p>
+LivingREADME keeps your README in step with your code. It listens for pushes to your default branch, reads what changed, and decides whether the README needs a full rewrite or only a few sections touched. Then it writes the update with Gemini (or DeepSeek via Radox AI when Gemini is busy) and commits it back to the repo, or opens a pull request if you'd rather review it first. You watch each run step by step from the dashboard.
 
 ## Highlights
 
-|               |                                                                                                              |
-| ------------- | ------------------------------------------------------------------------------------------------------------ |
-| Trigger       | A GitHub push webhook on the default branch, verified with HMAC-SHA256                                       |
-| Update modes  | Full rewrite, section patch, and on-demand cleanup                                                           |
-| Delivery      | A direct commit, or a pull request from a `livingreadme/readme-*` branch                                     |
-| Models        | Gemini first, rotating across up to three API keys, with Sarvam AI as the fallback. Each user sets the order |
-| Context       | Up to 200 files read on a full rewrite, about 180K tokens sent to the model                                  |
-| Live logs     | Every step of every run streams to the dashboard as it happens                                               |
-| Loop guard    | LivingREADME's own commits carry `[skip ci]`, so they never start another run                                |
-| Notifications | An email when a run succeeds or fails, which you can switch off                                              |
+|               |                                                                                                             |
+| ------------- | ----------------------------------------------------------------------------------------------------------- |
+| Trigger       | A GitHub push webhook on the default branch, verified with HMAC-SHA256                                      |
+| Update modes  | Full rewrite, section patch, and on-demand cleanup                                                          |
+| Delivery      | A direct commit, or a pull request from a `livingreadme/readme-*` branch                                    |
+| Models        | Gemini first, rotating across up to three API keys, with DeepSeek as the fallback. Each user sets the order |
+| Context       | Up to 200 files read on a full rewrite, about 180K tokens sent to the model                                 |
+| Live logs     | Every step of every run streams to the dashboard as it happens                                              |
+| Loop guard    | LivingREADME's own commits carry `[skip ci]`, so they never start another run                               |
+| Notifications | An email when a run succeeds or fails, which you can switch off                                             |
 
 ## Update modes
 
-<table>
-  <tr>
-    <td width="33%"><img src="docs/images/mode-full-rewrite.jpg" alt="Full rewrite: every line of the README is newly written" /></td>
-    <td width="33%"><img src="docs/images/mode-section-patch.jpg" alt="Section patch: only two sections of the README change" /></td>
-    <td width="33%"><img src="docs/images/mode-cleanup.jpg" alt="Cleanup: a duplicate section is removed and nothing new is added" /></td>
-  </tr>
-  <tr>
-    <td align="center" valign="top"><b>Full rewrite</b><br><sub>Reads the whole repo and writes it fresh</sub></td>
-    <td align="center" valign="top"><b>Section patch</b><br><sub>Rewrites only the sections a push touched</sub></td>
-    <td align="center" valign="top"><b>Cleanup</b><br><sub>Tidies a messy README, adds nothing new</sub></td>
-  </tr>
-</table>
+| Mode              | Description                                                                             |
+| :---------------- | :-------------------------------------------------------------------------------------- |
+| **Full rewrite**  | Reads the entire repository and writes the README fresh from scratch.                   |
+| **Section patch** | Rewrites only the specific sections affected by the latest push.                        |
+| **Cleanup**       | Tidies and formats a messy README, removing duplicate sections without adding new ones. |
 
 A small, fast model reads the current README and picks between a full rewrite and a patch. When the two are close, it chooses the patch, so the parts you wrote yourself stay put. Cleanup runs only when you press the broom button on a repo card.
 
@@ -76,22 +52,18 @@ From the **Repositories** page:
 
 - **The toggle** on each card turns automatic updates on or off for that repo.
 - **Direct** or **Pull Request** sets how updates arrive: committed straight to the default branch, or raised as a pull request for you to merge.
-- **AI Priority** chooses which model runs first, Gemini or Sarvam AI.
+- **AI Priority** chooses which model runs first, Gemini or DeepSeek.
 - **The broom button** cleans up the repo's README on demand.
 
 **Activity Logs** lists every run with its status. Open one to see each step, the strategy it chose and why, and a link to the commit or pull request.
 
 ## How it works
 
-<p align="center">
-  <img src="docs/images/live-logs.jpg" alt="A live LivingREADME run: a section patch that switched to the backup model and raised a pull request" width="100%" />
-</p>
-
 1. **Push.** You push to the default branch. Pushes to other branches, LivingREADME's own commits and commits it has already handled are ignored.
 2. **Queue.** The Express server checks the webhook signature, answers GitHub at once, and puts a job on a BullMQ queue in Redis.
 3. **Read.** The worker fetches the commit, the repository tree and the current README.
 4. **Decide.** With no README, it writes one from scratch. Otherwise the detection model picks a full rewrite or a section patch.
-5. **Write.** A full rewrite reads up to 200 files. A patch reads only the changed files and rewrites only the README sections they affect. If Gemini is rate-limited or down, its next key takes over, and after that the run falls back to Sarvam AI with the context trimmed to fit Sarvam's 32K window.
+5. **Write.** A full rewrite reads up to 200 files. A patch reads only the changed files and rewrites only the README sections they affect. If Gemini is rate-limited or down, its next key takes over, and after that the run falls back to DeepSeek.
 6. **Deliver.** The README is committed as `chore: auto-update README [skip ci]`, or opened as a pull request with the same title.
 
 Every step is pushed to Convex as it happens, so the dashboard updates without polling.
@@ -110,7 +82,7 @@ MongoDB stores users, connected repos and run history. Redis backs the job and e
 - LivingREADME signs in through GitHub OAuth with the `repo`, `read:user` and `user:email` scopes. It never sees your GitHub password.
 - It changes one file, `README.md`, plus the push webhook it adds when you switch a repo on.
 - GitHub tokens are stored encrypted with AES-256-GCM.
-- To write the README, file contents from your repository are sent to the model provider, Google Gemini or Sarvam AI.
+- To write the README, file contents from your repository are sent to the model provider, Google Gemini or DeepSeek (via Radox AI).
 - You can revoke access at any time from [GitHub's application settings](https://github.com/settings/applications), and generation stops at once.
 
 ## Self-hosting
@@ -161,7 +133,7 @@ CONVEX_URL=https://your-convex-deployment.convex.cloud
 GEMINI_API_KEY1=your_primary_gemini_key
 GEMINI_API_KEY2=your_secondary_gemini_key
 GEMINI_API_KEY3=your_tertiary_gemini_key
-SARVAM_API_KEY=your_sarvam_api_key
+RADOX_API_KEY=your_radox_api_key
 
 RESEND_API_KEY=your_resend_api_key
 README_FILE_NAME=README.md
@@ -242,7 +214,7 @@ docker run -p 3000:3000 --env-file server/.env livingreadme-server
 ## Roadmap
 
 - [x] Full rewrites and section patches on every push
-- [x] Gemini with Sarvam AI fallback and per-user model order
+- [x] Gemini with DeepSeek fallback and per-user model order
 - [x] Live run logs on the dashboard
 - [x] Pull request delivery
 - [x] One-click README cleanup
@@ -275,16 +247,6 @@ pnpm test
 ## About the name
 
 A daemon is a program that runs in the background without anyone starting it by hand, like the processes that keep a server alive. LivingREADME is one for your documentation: it waits for a push, does its work, and gets out of the way. The mascot is a friendly blue imp, a nod to the older meaning of the word.
-
-## Star history
-
-<a href="https://star-history.com/#Classyvaibhav06/livingreadme&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date" />
-    <img alt="Star history for Classyvaibhav06/livingreadme" src="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date" />
-  </picture>
-</a>
 
 ## License
 
