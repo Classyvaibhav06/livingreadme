@@ -1,32 +1,32 @@
-name: daemondoc-local
+name: livingreadme-local
 services:
   mongo:
     image: mongo:8
-    container_name: daemondoc-mongo
+    container_name: livingreadme-mongo
     restart: unless-stopped
     networks:
-      - daemondoc-local-network
+      - livingreadme-local-network
     ports:
       - "27017:27017"
     volumes:
-      - daemondoc-mongo-data:/data/db
+      - livingreadme-mongo-data:/data/db
 
   redis:
     image: redis:7-alpine
-    container_name: daemondoc-redis
+    container_name: livingreadme-redis
     restart: unless-stopped
     networks:
-      - daemondoc-local-network
+      - livingreadme-local-network
     ports:
       - "6379:6379"
     volumes:
-      - daemondoc-redis-data:/data
+      - livingreadme-redis-data:/data
 
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: daemondoc-api
+    container_name: livingreadme-api
     restart: unless-stopped
     env_file:
       - .env
@@ -34,17 +34,17 @@ services:
       - mongo
       - redis
     networks:
-      - daemondoc-local-network
+      - livingreadme-local-network
     ports:
       - "3000:3000"
 
 networks:
-  daemondoc-local-network:
-    name: daemondoc-local-network
+  livingreadme-local-network:
+    name: livingreadme-local-network
     driver: bridge
 
 volumes:
-  daemondoc-mongo-data:
-    name: daemondoc-mongo-data
-  daemondoc-redis-data:
-    name: daemondoc-redis-data
+  livingreadme-mongo-data:
+    name: livingreadme-mongo-data
+  livingreadme-redis-data:
+    name: livingreadme-redis-data

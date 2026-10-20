@@ -71,7 +71,7 @@ export const renderFeatureAnnouncementTemplate = (data) => {
 
   html = html.split("{{CHANGE_LIST}}").join(changeListHtml);
 
-  html = applyToken(html, "CTA_PRIMARY_URL", "https://daemondoc.online");
+  html = applyToken(html, "CTA_PRIMARY_URL", "https://livingreadme.com");
   html = applyToken(html, "CTA_PRIMARY_TEXT", data?.primaryCTA || "Try Now");
   html = applyToken(
     html,

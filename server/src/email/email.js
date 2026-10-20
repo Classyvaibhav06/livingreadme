@@ -12,7 +12,7 @@ export async function sendSuccessEmail(
 ) {
   try {
     await resend.emails.send({
-      from: "DaemonDoc <notifications@daemondoc.online>",
+      from: "LivingREADME <notifications@livingreadme.com>",
       to: userEmail,
       template: {
         id: process.env.SUCCESS_EMAIL_ID, // from step 1
@@ -39,7 +39,7 @@ export async function sendFailureEmail(
   repoUrl,
 ) {
   await resend.emails.send({
-    from: "DaemonDoc <notifications@daemondoc.online>",
+    from: "LivingREADME <notifications@livingreadme.com>",
     to: userEmail,
     template: {
       id: process.env.FAILED_EMAIL_ID,
@@ -49,7 +49,7 @@ export async function sendFailureEmail(
         mode,
         errorMessage,
         repoUrl,
-        runUrl: "https://app.daemondoc.online/logs",
+        runUrl: "https://app.livingreadme.com/logs",
       },
     },
   });

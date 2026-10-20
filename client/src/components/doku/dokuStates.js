@@ -6,7 +6,7 @@ export const repoErrorState = ({ error, onRetry }) => ({
   tone: "error",
   title: "Couldn't load your repositories",
   description:
-    "GitHub or DaemonDoc didn't answer this time. Your settings are safe; give it another go.",
+    "GitHub or LivingREADME didn't answer this time. Your settings are safe; give it another go.",
   detail: error,
   action: { label: "Try again", onClick: onRetry },
 });

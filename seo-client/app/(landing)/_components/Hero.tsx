@@ -23,7 +23,7 @@ import { CandyLink } from "@/components/ui/candy-button";
 import Reveal from "./Reveal";
 
 const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.daemondoc.online";
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.livingreadme.com";
 
 /** Languages the analyzer reads — shown as a static strip under the prompt card. */
 const TECH_LOGOS = [
@@ -65,7 +65,7 @@ const TECH_LOGOS = [
   },
 ];
 
-/** The two things DaemonDoc does with a repo, shown as labels on the mock. */
+/** The two things LivingREADME does with a repo, shown as labels on the mock. */
 const MODES = [
   { id: "direct", label: "Direct", Icon: FileText },
   { id: "pr", label: "Pull Request", Icon: GitPullRequest },
@@ -252,7 +252,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-1 items-center justify-center gap-1 rounded-md bg-white py-1 pr-20 font-mono text-xs text-slate-400">
                 <Lock size={10} className="shrink-0" />
-                daemondoc.online
+                livingreadme.com
               </div>
             </div>
 
@@ -302,7 +302,7 @@ export default function Hero() {
 
         <Reveal>
           <p className="mx-auto mt-16 max-w-2xl text-center text-lg leading-relaxed font-light tracking-[-0.012em] text-slate-600 lg:mt-20">
-            DaemonDoc reads your repository, writes the README, and patches only
+            LivingREADME reads your repository, writes the README, and patches only
             the sections your code actually changed.
           </p>
         </Reveal>

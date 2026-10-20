@@ -4,15 +4,15 @@ import { APP_ORIGIN, MARKETING_URL } from "@/lib/urls";
 /**
  * Every route in this app is a signed-in dashboard or auth screen — the public
  * landing lives on the marketing domain. So `noindex` defaults to true here:
- * these pages have no search value and must not compete with daemondoc.online.
+ * these pages have no search value and must not compete with livingreadme.com.
  */
 const SEO = ({
-  title = "DaemonDoc - AI-Powered README Generator for GitHub | Automate Your Documentation",
-  description = "Stop wasting hours on documentation. DaemonDoc automatically generates and updates your GitHub README files using AI. Connect your repos and keep documentation fresh as your code evolves.",
+  title = "LivingREADME - AI-Powered README Generator for GitHub | Automate Your Documentation",
+  description = "Stop wasting hours on documentation. LivingREADME automatically generates and updates your GitHub README files using AI. Connect your repos and keep documentation fresh as your code evolves.",
   keywords = "README generator, AI documentation, GitHub automation, automatic README, documentation tool",
   ogImage = `${MARKETING_URL}/main_og.png`,
   ogUrl = `${APP_ORIGIN}/`,
-  twitterHandle = "@daemondoc",
+  twitterHandle = "@livingreadme",
   canonical = `${APP_ORIGIN}/`,
   noindex = true,
 }) => {

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.daemondoc.online/sitemap.xml",
+    sitemap: "https://www.livingreadme.com/sitemap.xml",
   };
 }

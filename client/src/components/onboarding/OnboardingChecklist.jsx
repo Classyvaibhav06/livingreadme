@@ -761,7 +761,7 @@ const StepsView = ({
             title="Turn on your first repository"
             done={steps.firstRepo}
             current={currentKey === "firstRepo"}
-            summary="Connected. Every push now reaches DaemonDoc."
+            summary="Connected. Every push now reaches LivingREADME."
           >
             <FirstRepoStep />
           </StepRow>

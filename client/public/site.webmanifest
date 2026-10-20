@@ -1,6 +1,6 @@
 {
-  "name": "DaemonDoc - AI-Powered README Generator",
-  "short_name": "DaemonDoc",
+  "name": "LivingREADME - AI-Powered README Generator",
+  "short_name": "LivingREADME",
   "description": "Automate your GitHub documentation with AI-powered README generation",
   "start_url": "/",
   "display": "standalone",

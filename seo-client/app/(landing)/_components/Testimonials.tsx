@@ -17,7 +17,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "DaemonDoc has completely transformed our development workflow. Keeping our documentation in sync with our code was always a nightmare until we integrated this engine. It's truly 'push once, sync forever'.",
+      "LivingREADME has completely transformed our development workflow. Keeping our documentation in sync with our code was always a nightmare until we integrated this engine. It's truly 'push once, sync forever'.",
     name: "Yash Bavadiya",
     designation: "Full Stack Developer",
     src: "/yash.webp",
@@ -38,14 +38,14 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "DaemonDoc is genuinely impressive. The UI is clean, the experience is smooth, and everything just works the way you'd expect it to. Would recommend it to any developer without hesitation.",
+      "LivingREADME is genuinely impressive. The UI is clean, the experience is smooth, and everything just works the way you'd expect it to. Would recommend it to any developer without hesitation.",
     name: "Shaswat Sharma",
     designation: "Software Developer",
     src: "/shaswat.webp",
   },
   {
     quote:
-      "Tried DaemonDoc and it's honestly amazing. The UI is super clean, and the login page feels unreal and majestic. Everything is well-designed and smooth. Loved it so much that I'm considering using it for all my projects.",
+      "Tried LivingREADME and it's honestly amazing. The UI is super clean, and the login page feels unreal and majestic. Everything is well-designed and smooth. Loved it so much that I'm considering using it for all my projects.",
     name: "Raghuraj Singh Rathore",
     designation: "Front End Developer",
     src: "/raghuraj.webp",
@@ -67,7 +67,7 @@ export default function Testimonials() {
           Trusted by Developers Who Ship
         </h2>
         <p className="text-lg font-light tracking-[-0.012em] text-slate-600">
-          See what engineers and developers are saying about DaemonDoc.
+          See what engineers and developers are saying about LivingREADME.
         </p>
       </Reveal>
 

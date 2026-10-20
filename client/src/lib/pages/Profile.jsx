@@ -111,8 +111,8 @@ const Profile = () => {
   return (
     <>
       <SEO
-        title="Profile - DaemonDoc"
-        description="Review your DaemonDoc account, GitHub connection, repository activity, and account settings."
+        title="Profile - LivingREADME"
+        description="Review your LivingREADME account, GitHub connection, repository activity, and account settings."
         ogUrl={`${APP_ORIGIN}/profile`}
         canonical={`${APP_ORIGIN}/profile`}
       />

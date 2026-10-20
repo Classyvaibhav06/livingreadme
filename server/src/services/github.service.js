@@ -220,7 +220,7 @@ export async function raisePr(
   message,
   baseBranch,
   sha = null,
-  headBranch = `daemondoc/readme-${Date.now()}`,
+  headBranch = `livingreadme/readme-${Date.now()}`,
 ) {
   try {
     const baseRefUrl = `${GITHUB_API_BASE}/repos/${owner}/${repo}/git/ref/heads/${baseBranch}`;

@@ -1,14 +1,14 @@
-name: daemondoc-api-server
+name: livingreadme-api-server
 services:
   redis:
     image: redis:7-alpine
-    container_name: daemondoc-redis
+    container_name: livingreadme-redis
     restart: unless-stopped
     command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
     networks:
-      - daemondoc-api-network
+      - livingreadme-api-network
     volumes:
-      - daemondoc-redis-data:/data
+      - livingreadme-redis-data:/data
 
   api:
     build:
@@ -23,7 +23,7 @@ services:
     depends_on:
       - redis
     networks:
-      - daemondoc-api-network
+      - livingreadme-api-network
 
   caddy:
     image: caddy:2-alpine
@@ -38,16 +38,16 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     networks:
-      - daemondoc-api-network
+      - livingreadme-api-network
 
 networks:
-  daemondoc-api-network:
-    name: daemondoc-api-network
+  livingreadme-api-network:
+    name: livingreadme-api-network
     driver: bridge
 
 volumes:
-  daemondoc-redis-data:
-    name: daemondoc-redis-data
+  livingreadme-redis-data:
+    name: livingreadme-redis-data
   caddy_data:
     name: caddy_data
   caddy_config:

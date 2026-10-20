@@ -57,7 +57,7 @@ const AuthNavigation = () => {
         {/* Logo */}
         <a
           href={MARKETING_URL}
-          aria-label="DaemonDoc home"
+          aria-label="LivingREADME home"
           className="flex shrink-0 cursor-pointer items-center gap-2 rounded-lg"
         >
           <img
@@ -68,7 +68,7 @@ const AuthNavigation = () => {
             className="h-8 w-auto sm:h-9"
           />
           <span className="font-display text-lg font-semibold tracking-tight text-slate-900 sm:text-xl">
-            DaemonDoc
+            LivingREADME
           </span>
         </a>
 

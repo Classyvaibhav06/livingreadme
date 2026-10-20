@@ -1,4 +1,4 @@
-api2.daemondoc.online {
+api2.livingreadme.com {
     handle {
         reverse_proxy api:3000 {
             header_up Host {host}

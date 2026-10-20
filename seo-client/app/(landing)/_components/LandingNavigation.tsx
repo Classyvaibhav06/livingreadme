@@ -15,7 +15,7 @@ import {
 import { CandyLink } from "@/components/ui/candy-button";
 
 const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.daemondoc.online";
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.livingreadme.com";
 
 // Root-relative so the links also work from the inner pages. Listed in the
 // order the sections appear on the home page.

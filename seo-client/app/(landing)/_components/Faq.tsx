@@ -7,24 +7,24 @@ import Reveal from "./Reveal";
 
 const QUESTIONS = [
   {
-    question: "How does DaemonDoc keep my README up to date?",
+    question: "How does LivingREADME keep my README up to date?",
     answer:
-      "Connect a repository once, then keep working as usual. DaemonDoc listens for GitHub pushes, reviews the changed code, and updates the relevant README sections when your documentation needs to change.",
+      "Connect a repository once, then keep working as usual. LivingREADME listens for GitHub pushes, reviews the changed code, and updates the relevant README sections when your documentation needs to change.",
   },
   {
     question: "Will it rewrite my whole README every time?",
     answer:
-      "No. DaemonDoc is designed to update the sections affected by your changes, so the rest of your README stays intact instead of being replaced by a fresh generic document.",
+      "No. LivingREADME is designed to update the sections affected by your changes, so the rest of your README stays intact instead of being replaced by a fresh generic document.",
   },
   {
-    question: "Does DaemonDoc support monorepos?",
+    question: "Does LivingREADME support monorepos?",
     answer:
-      "Yes. You can connect monorepos and let DaemonDoc work with the documentation structure already used by your projects.",
+      "Yes. You can connect monorepos and let LivingREADME work with the documentation structure already used by your projects.",
   },
   {
-    question: "What access does DaemonDoc need?",
+    question: "What access does LivingREADME need?",
     answer:
-      "DaemonDoc uses scoped GitHub OAuth access to connect the repositories you choose. Access tokens are encrypted, and the service is built to keep secrets and internal configuration out of generated documentation.",
+      "LivingREADME uses scoped GitHub OAuth access to connect the repositories you choose. Access tokens are encrypted, and the service is built to keep secrets and internal configuration out of generated documentation.",
   },
   {
     question: "Can I review documentation changes before publishing?",
@@ -32,9 +32,9 @@ const QUESTIONS = [
       "Yes. Documentation updates are made as GitHub changes, giving your existing repository workflow a clear place to review what changed.",
   },
   {
-    question: "How much does DaemonDoc cost?",
+    question: "How much does LivingREADME cost?",
     answer:
-      "DaemonDoc is currently available to get started with at no cost. Connect a repository and see how continuous documentation fits into your workflow.",
+      "LivingREADME is currently available to get started with at no cost. Connect a repository and see how continuous documentation fits into your workflow.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Faq() {
             Everything you need to know before you connect.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600">
-            A quick look at how DaemonDoc fits into your GitHub workflow.
+            A quick look at how LivingREADME fits into your GitHub workflow.
           </p>
         </Reveal>
 

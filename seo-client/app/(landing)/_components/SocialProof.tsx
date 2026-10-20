@@ -10,7 +10,7 @@ const COMPANIES = [
 
 export default function SocialProof() {
   return (
-    <div aria-label="Teams using DaemonDoc" role="group">
+    <div aria-label="Teams using LivingREADME" role="group">
       <div className="text-center">
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {COMPANIES.map((c) => (

@@ -1,7 +1,7 @@
 <wizard-report>
 # PostHog post-wizard report
 
-The wizard has completed a deep integration of PostHog analytics into DaemonDoc. PostHog was already installed and partially instrumented; this session verified the existing setup, set correct environment variable values, supplemented event tracking with error capture and two new engagement events, and created a PostHog dashboard with five insights covering the full user lifecycle.
+The wizard has completed a deep integration of PostHog analytics into LivingREADME. PostHog was already installed and partially instrumented; this session verified the existing setup, set correct environment variable values, supplemented event tracking with error capture and two new engagement events, and created a PostHog dashboard with five insights covering the full user lifecycle.
 
 ## Summary of changes
 

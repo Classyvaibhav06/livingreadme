@@ -27,7 +27,7 @@ export const buildFallbackHtml = (data) => {
           )
           .join("")
       : "<li>General improvements and stability updates.</li>";
-  const safePrimaryUrl = "https://daemondoc.online";
+  const safePrimaryUrl = "https://livingreadme.com";
 
   return `<!doctype html>
 <html>

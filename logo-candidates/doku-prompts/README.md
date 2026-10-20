@@ -1,6 +1,6 @@
 # Doku pose requirements
 
-Doku is DaemonDoc's mascot: a small blue imp. These requirements apply to every new pose. Each pose has its own ready-to-paste prompt file in this folder.
+Doku is LivingREADME's mascot: a small blue imp. These requirements apply to every new pose. Each pose has its own ready-to-paste prompt file in this folder.
 
 ## Workflow (ChatGPT)
 

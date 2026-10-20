@@ -7,10 +7,10 @@ import {
 } from "../_components/SubPage";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - DaemonDoc",
+  title: "Privacy Policy - LivingREADME",
   description:
-    "What DaemonDoc collects when you connect a GitHub repository, how that data is used and protected, and the choices you have.",
-  alternates: { canonical: "https://www.daemondoc.online/privacy" },
+    "What LivingREADME collects when you connect a GitHub repository, how that data is used and protected, and the choices you have.",
+  alternates: { canonical: "https://www.livingreadme.com/privacy" },
 };
 
 const SECTIONS: LegalSection[] = [
@@ -18,10 +18,10 @@ const SECTIONS: LegalSection[] = [
     heading: "Who we are",
     body: (
       <p>
-        DaemonDoc (&ldquo;we&rdquo;, &ldquo;us&rdquo;) provides a service that
+        LivingREADME (&ldquo;we&rdquo;, &ldquo;us&rdquo;) provides a service that
         generates and updates README documentation for GitHub repositories. This
-        policy explains what information we handle when you use daemondoc.online
-        and the DaemonDoc app.
+        policy explains what information we handle when you use livingreadme.com
+        and the LivingREADME app.
       </p>
     ),
   },
@@ -52,7 +52,7 @@ const SECTIONS: LegalSection[] = [
     heading: "How we use it",
     body: (
       <>
-        <p>We use this information only to run and improve DaemonDoc:</p>
+        <p>We use this information only to run and improve LivingREADME:</p>
         <ul>
           <li>to authenticate you and show your connected repositories;</li>
           <li>to generate README content and commit it on your behalf;</li>
@@ -107,7 +107,7 @@ const SECTIONS: LegalSection[] = [
           processing of it.
         </li>
         <li>
-          Revoke DaemonDoc&rsquo;s access from your GitHub settings under
+          Revoke LivingREADME&rsquo;s access from your GitHub settings under
           Applications.
         </li>
         <li>
@@ -131,7 +131,7 @@ const SECTIONS: LegalSection[] = [
       <p>
         Questions about privacy? Open an issue on{" "}
         <a
-          href="https://github.com/kaihere14/daemondoc"
+          href="https://github.com/kaihere14/livingreadme"
           target="_blank"
           rel="noopener noreferrer"
         >

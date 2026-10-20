@@ -8,48 +8,48 @@ import Footer from "./(landing)/_components/Footer";
 
 export const metadata: Metadata = {
   title:
-    "DaemonDoc - AI-Powered README Generator for GitHub | Automate Your Documentation",
+    "LivingREADME - AI-Powered README Generator for GitHub | Automate Your Documentation",
   description:
-    "Stop wasting hours on documentation. DaemonDoc automatically generates and updates your GitHub README files using AI. Connect your repos and keep documentation fresh as your code evolves.",
+    "Stop wasting hours on documentation. LivingREADME automatically generates and updates your GitHub README files using AI. Connect your repos and keep documentation fresh as your code evolves.",
   keywords:
     "README generator, AI documentation, GitHub automation, automatic README, documentation tool, code documentation, GitHub README, AI README generator, developer tools, documentation automation, README automation, continuous documentation sync, automated GitHub README, documentation-as-code, AST-based patching, deterministic patching, stateless sync, webhook-driven documentation",
-  authors: [{ name: "DaemonDoc" }],
+  authors: [{ name: "LivingREADME" }],
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.daemondoc.online",
+    canonical: "https://www.livingreadme.com",
   },
   openGraph: {
     type: "website",
-    url: "https://daemondoc.online/",
-    siteName: "DaemonDoc",
+    url: "https://livingreadme.com/",
+    siteName: "LivingREADME",
     locale: "en_US",
-    title: "DaemonDoc - AI-Powered README Generator for GitHub",
+    title: "LivingREADME - AI-Powered README Generator for GitHub",
     description:
-      "Set and Forget GitHub documentation. DaemonDoc uses AST-based patching and webhook-driven sync to keep your README accurate on every push — no manual effort required.",
+      "Set and Forget GitHub documentation. LivingREADME uses AST-based patching and webhook-driven sync to keep your README accurate on every push — no manual effort required.",
     images: [
       {
-        url: "https://daemondoc.online/main_og.png",
+        url: "https://livingreadme.com/main_og.png",
         width: 1200,
         height: 630,
-        alt: "DaemonDoc - Automate Your GitHub Documentation",
+        alt: "LivingREADME - Automate Your GitHub Documentation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@daemondoc",
-    creator: "@daemondoc",
-    title: "DaemonDoc - AI-Powered README Generator for GitHub",
+    site: "@livingreadme",
+    creator: "@livingreadme",
+    title: "LivingREADME - AI-Powered README Generator for GitHub",
     description:
-      "Set and Forget GitHub documentation. DaemonDoc uses AST-based patching and webhook-driven sync to keep your README accurate on every push — no manual effort required.",
-    images: ["https://daemondoc.online/x_og.png"],
+      "Set and Forget GitHub documentation. LivingREADME uses AST-based patching and webhook-driven sync to keep your README accurate on every push — no manual effort required.",
+    images: ["https://livingreadme.com/x_og.png"],
   },
   other: {
     "theme-color": "#0f172a",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "apple-mobile-web-app-title": "DaemonDoc",
-    "application-name": "DaemonDoc",
+    "apple-mobile-web-app-title": "LivingREADME",
+    "application-name": "LivingREADME",
     "msapplication-TileColor": "#0f172a",
     "revisit-after": "7 days",
     language: "English",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "DaemonDoc",
+  name: "LivingREADME",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "Web",
   offers: {
@@ -69,11 +69,11 @@ const jsonLd = {
   },
   description:
     "AI-powered README generator that automatically creates and updates documentation for your GitHub repositories.",
-  url: "https://daemondoc.online",
-  image: "https://daemondoc.online/main_og.png",
+  url: "https://livingreadme.com",
+  image: "https://livingreadme.com/main_og.png",
   author: {
     "@type": "Organization",
-    name: "DaemonDoc",
+    name: "LivingREADME",
   },
   featureList: [
     "AI-powered code analysis",

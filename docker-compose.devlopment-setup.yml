@@ -1,37 +1,37 @@
 services:
   mongo:
     image: mongo:8
-    container_name: daemondoc-mongo
+    container_name: livingreadme-mongo
     restart: unless-stopped
     networks:
-      - daemondoc-network
+      - livingreadme-network
     ports:
       - "27017:27017"
     volumes:
-      - daemondoc-mongo-data:/data/db
+      - livingreadme-mongo-data:/data/db
 
   redis:
     image: redis:7-alpine
-    container_name: daemondoc-redis
+    container_name: livingreadme-redis
     restart: unless-stopped
     networks:
-      - daemondoc-network
+      - livingreadme-network
     ports:
       - "6379:6379"
     volumes:
-      - daemondoc-redis-data:/data
+      - livingreadme-redis-data:/data
 
   mongo-seed:
     image: mongo:8
-    container_name: daemondoc-mongo-seed
+    container_name: livingreadme-mongo-seed
     networks:
-      - daemondoc-network
+      - livingreadme-network
     depends_on:
       - mongo
     restart: "no"
     command: >
-      mongosh mongodb://mongo:27017/daemondoc --eval '
-      db = db.getSiblingDB("daemondoc");
+      mongosh mongodb://mongo:27017/livingreadme --eval '
+      db = db.getSiblingDB("livingreadme");
 
       const githubId = "319204766";
 
@@ -53,19 +53,19 @@ services:
           updatedAt: ISODate("2026-08-20T20:50:53.009Z")
         });
 
-        print("Seeded DaemonDoc user");
+        print("Seeded LivingREADME user");
       } else {
         db.users.updateOne({ githubId: githubId }, { $set: { admin: true, updatedAt: new Date() } });
-        print("DaemonDoc user already exists — admin flag ensured");
+        print("LivingREADME user already exists — admin flag ensured");
       }
       '
 
 volumes:
-  daemondoc-mongo-data:
-    name: daemondoc-mongo-data
-  daemondoc-redis-data:
-    name: daemondoc-redis-data
+  livingreadme-mongo-data:
+    name: livingreadme-mongo-data
+  livingreadme-redis-data:
+    name: livingreadme-redis-data
 networks:
-  daemondoc-network:
-    name: daemondoc-network
+  livingreadme-network:
+    name: livingreadme-network
     driver: bridge

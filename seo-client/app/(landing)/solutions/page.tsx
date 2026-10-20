@@ -6,10 +6,10 @@ import CoreCapabilities from "../_components/CoreCapabilities";
 import { SECTION_X, SECTION_Y } from "@/app/(landing)/_lib/section";
 
 export const metadata: Metadata = {
-  title: "Solutions - DaemonDoc",
+  title: "Solutions - LivingREADME",
   description:
-    "How DaemonDoc keeps README files accurate for solo developers, monorepo teams, and security-conscious organisations — automatically, on every push.",
-  alternates: { canonical: "https://www.daemondoc.online/solutions" },
+    "How LivingREADME keeps README files accurate for solo developers, monorepo teams, and security-conscious organisations — automatically, on every push.",
+  alternates: { canonical: "https://www.livingreadme.com/solutions" },
 };
 
 const AUDIENCES = [
@@ -42,7 +42,7 @@ export default function SolutionsPage() {
       <PageHeader
         eyebrow="Solutions"
         title="Documentation that keeps up with your code"
-        description="Whether you maintain one side project or a fleet of services, DaemonDoc turns every push into an up-to-date README."
+        description="Whether you maintain one side project or a fleet of services, LivingREADME turns every push into an up-to-date README."
       />
 
       <section className={SECTION_Y}>

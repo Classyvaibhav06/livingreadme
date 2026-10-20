@@ -6,7 +6,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://daemondoc.online/</loc>
+    <loc>https://livingreadme.com/</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- Login Page -->
   <url>
-    <loc>https://daemondoc.online/login</loc>
+    <loc>https://livingreadme.com/login</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
   
   <!-- Home/Dashboard -->
   <url>
-    <loc>https://daemondoc.online/home</loc>
+    <loc>https://livingreadme.com/home</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
   
   <!-- Profile -->
   <url>
-    <loc>https://daemondoc.online/profile</loc>
+    <loc>https://livingreadme.com/profile</loc>
     <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

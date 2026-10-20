@@ -67,7 +67,7 @@ const PIPELINE = [
     step: "05",
     label: "Commit",
     detail: "The README is written back. You never write documentation.",
-    id: "chore: update README via DaemonDoc",
+    id: "chore: update README via LivingREADME",
   },
 ];
 
@@ -120,7 +120,7 @@ const Login = () => {
         <header className="flex shrink-0 items-center justify-between gap-6 py-5">
           <a
             href={MARKETING_URL}
-            aria-label="DaemonDoc home"
+            aria-label="LivingREADME home"
             className="flex items-center gap-1.5 rounded-md"
           >
             <img
@@ -131,14 +131,14 @@ const Login = () => {
               className="h-6 w-auto"
             />
             <span className="font-display text-base font-semibold tracking-tight text-slate-900">
-              DaemonDoc
+              LivingREADME
             </span>
           </a>
           <a
             href={MARKETING_URL}
             className={`${TYPE.caption} rounded-md text-slate-500 transition-colors hover:text-slate-900`}
           >
-            Back to daemondoc.online
+            Back to livingreadme.com
           </a>
         </header>
 
@@ -156,9 +156,9 @@ const Login = () => {
               height={480}
               className="mb-5 h-24 w-auto"
             />
-            <h1 className={TYPE.title}>Sign in to DaemonDoc</h1>
+            <h1 className={TYPE.title}>Sign in to LivingREADME</h1>
             <p className={`${TYPE.lede} mt-3 max-w-[58ch]`}>
-              DaemonDoc reads your repository on every push and writes the
+              LivingREADME reads your repository on every push and writes the
               documentation back to it.
             </p>
 
@@ -180,8 +180,8 @@ const Login = () => {
                 className={`${TYPE.caption} mt-2.5 max-w-xs`}
               >
                 {isRedirecting
-                  ? "Taking you to GitHub to authorize DaemonDoc."
-                  : "GitHub OAuth. DaemonDoc never sees your password."}
+                  ? "Taking you to GitHub to authorize LivingREADME."
+                  : "GitHub OAuth. LivingREADME never sees your password."}
               </p>
             </div>
 
@@ -233,7 +233,7 @@ const Login = () => {
         </main>
 
         <footer className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-slate-200 py-4">
-          <span className={TYPE.caption}>DaemonDoc</span>
+          <span className={TYPE.caption}>LivingREADME</span>
           <span className={TYPE.caption}>
             Documentation generated from your commits.
           </span>

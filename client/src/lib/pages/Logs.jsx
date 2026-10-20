@@ -169,7 +169,7 @@ const Logs = () => {
   return (
     <>
       <SEO
-        title="Activity Logs - DaemonDoc"
+        title="Activity Logs - LivingREADME"
         ogUrl={`${APP_ORIGIN}/logs`}
         canonical={`${APP_ORIGIN}/logs`}
       />

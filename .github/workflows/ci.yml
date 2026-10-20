@@ -12,6 +12,7 @@ concurrency:
 jobs:
   deploy:
     name: Deploy API server to EC2
+    if: ${{ secrets.EC2_HOST != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy over SSH
@@ -25,7 +26,7 @@ jobs:
           script: |
             set -euo pipefail
 
-            APP_DIR="${{ vars.EC2_APP_DIR || '$HOME/daemondoc' }}"
+            APP_DIR="${{ vars.EC2_APP_DIR || '$HOME/livingreadme' }}"
             COMPOSE_FILE="docker-compose.api-server.yml"
 
             if [ ! -d "$APP_DIR/.git" ]; then

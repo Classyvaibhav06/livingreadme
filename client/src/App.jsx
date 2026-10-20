@@ -11,7 +11,7 @@ import DashboardLayout from "./components/common/DashboardLayout";
 import { MARKETING_URL } from "./lib/urls";
 
 /**
- * This app is the dashboard (app.daemondoc.online); the landing page lives on
+ * This app is the dashboard (app.livingreadme.com); the landing page lives on
  * the apex domain. Anyone hitting the app root gets sent there.
  */
 const MarketingRedirect = () => {

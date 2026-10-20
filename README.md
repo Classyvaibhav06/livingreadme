@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.jpg" alt="DaemonDoc banner: a README pull request raised by DaemonDoc on the painted DaemonDoc background" width="100%" />
+  <img src="docs/images/banner.jpg" alt="LivingREADME banner: a README pull request raised by LivingREADME on the painted LivingREADME background" width="100%" />
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
 </p>
 
 <h4 align="center">
-  <a href="https://daemondoc.online">Website</a> |
+  <a href="https://livingreadme.com">Website</a> |
   <a href="#getting-started">Getting started</a> |
   <a href="#how-it-works">How it works</a> |
   <a href="#self-hosting">Self-hosting</a> |
@@ -26,10 +26,10 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
 </p>
 
-DaemonDoc keeps your README in step with your code. It listens for pushes to your default branch, reads what changed, and decides whether the README needs a full rewrite or only a few sections touched. Then it writes the update with Gemini (or Sarvam AI when Gemini is busy) and commits it back to the repo, or opens a pull request if you'd rather review it first. You watch each run step by step from the dashboard.
+LivingREADME keeps your README in step with your code. It listens for pushes to your default branch, reads what changed, and decides whether the README needs a full rewrite or only a few sections touched. Then it writes the update with Gemini (or Sarvam AI when Gemini is busy) and commits it back to the repo, or opens a pull request if you'd rather review it first. You watch each run step by step from the dashboard.
 
 <p align="center">
-  <img src="docs/images/dashboard.jpg" alt="The DaemonDoc dashboard: repository cards with auto-update toggles, commit type and AI priority controls" width="100%" />
+  <img src="docs/images/dashboard.jpg" alt="The LivingREADME dashboard: repository cards with auto-update toggles, commit type and AI priority controls" width="100%" />
 </p>
 
 ## Highlights
@@ -38,11 +38,11 @@ DaemonDoc keeps your README in step with your code. It listens for pushes to you
 | ------------- | ------------------------------------------------------------------------------------------------------------ |
 | Trigger       | A GitHub push webhook on the default branch, verified with HMAC-SHA256                                       |
 | Update modes  | Full rewrite, section patch, and on-demand cleanup                                                           |
-| Delivery      | A direct commit, or a pull request from a `daemondoc/readme-*` branch                                        |
+| Delivery      | A direct commit, or a pull request from a `livingreadme/readme-*` branch                                        |
 | Models        | Gemini first, rotating across up to three API keys, with Sarvam AI as the fallback. Each user sets the order |
 | Context       | Up to 200 files read on a full rewrite, about 180K tokens sent to the model                                  |
 | Live logs     | Every step of every run streams to the dashboard as it happens                                               |
-| Loop guard    | DaemonDoc's own commits carry `[skip ci]`, so they never start another run                                   |
+| Loop guard    | LivingREADME's own commits carry `[skip ci]`, so they never start another run                                   |
 | Notifications | An email when a run succeeds or fails, which you can switch off                                              |
 
 ## Update modes
@@ -64,10 +64,10 @@ A small, fast model reads the current README and picks between a full rewrite an
 
 ## Getting started
 
-The hosted version runs at [daemondoc.online](https://daemondoc.online). Nothing to install.
+The hosted version runs at [livingreadme.com](https://livingreadme.com). Nothing to install.
 
-1. Open the [dashboard](https://app.daemondoc.online/login) and choose **Continue with GitHub**.
-2. Switch on a repository. DaemonDoc adds a push webhook to it and writes the first README update straight away.
+1. Open the [dashboard](https://app.livingreadme.com/login) and choose **Continue with GitHub**.
+2. Switch on a repository. LivingREADME adds a push webhook to it and writes the first README update straight away.
 3. Push to the default branch as usual. Each push starts a new run.
 
 ## Usage
@@ -84,10 +84,10 @@ From the **Repositories** page:
 ## How it works
 
 <p align="center">
-  <img src="docs/images/live-logs.jpg" alt="A live DaemonDoc run: a section patch that switched to the backup model and raised a pull request" width="100%" />
+  <img src="docs/images/live-logs.jpg" alt="A live LivingREADME run: a section patch that switched to the backup model and raised a pull request" width="100%" />
 </p>
 
-1. **Push.** You push to the default branch. Pushes to other branches, DaemonDoc's own commits and commits it has already handled are ignored.
+1. **Push.** You push to the default branch. Pushes to other branches, LivingREADME's own commits and commits it has already handled are ignored.
 2. **Queue.** The Express server checks the webhook signature, answers GitHub at once, and puts a job on a BullMQ queue in Redis.
 3. **Read.** The worker fetches the commit, the repository tree and the current README.
 4. **Decide.** With no README, it writes one from scratch. Otherwise the detection model picks a full rewrite or a section patch.
@@ -98,8 +98,8 @@ Every step is pushed to Convex as it happens, so the dashboard updates without p
 
 | Part           | Folder           | What it does                                                 |
 | -------------- | ---------------- | ------------------------------------------------------------ |
-| Dashboard      | `client/`        | React 19 and Vite app at app.daemondoc.online                |
-| Website        | `seo-client/`    | Next.js 16 landing site at daemondoc.online                  |
+| Dashboard      | `client/`        | React 19 and Vite app at app.livingreadme.com                |
+| Website        | `seo-client/`    | Next.js 16 landing site at livingreadme.com                  |
 | API and worker | `server/`        | Express 5 API, webhook handler, BullMQ worker, LLM providers |
 | Live logs      | `convex-server/` | Convex functions that stream run messages to the dashboard   |
 
@@ -107,7 +107,7 @@ MongoDB stores users, connected repos and run history. Redis backs the job and e
 
 ## Security and privacy
 
-- DaemonDoc signs in through GitHub OAuth with the `repo`, `read:user` and `user:email` scopes. It never sees your GitHub password.
+- LivingREADME signs in through GitHub OAuth with the `repo`, `read:user` and `user:email` scopes. It never sees your GitHub password.
 - It changes one file, `README.md`, plus the push webhook it adds when you switch a repo on.
 - GitHub tokens are stored encrypted with AES-256-GCM.
 - To write the README, file contents from your repository are sent to the model provider, Google Gemini or Sarvam AI.
@@ -115,10 +115,10 @@ MongoDB stores users, connected repos and run history. Redis backs the job and e
 
 ## Self-hosting
 
-DaemonDoc needs Node.js 20 or newer, [pnpm](https://pnpm.io) 10, MongoDB and Redis. You also need a GitHub OAuth app, a [Convex](https://convex.dev) deployment and a Gemini API key.
+LivingREADME needs Node.js 20 or newer, [pnpm](https://pnpm.io) 10, MongoDB and Redis. You also need a GitHub OAuth app, a [Convex](https://convex.dev) deployment and a Gemini API key.
 
 ```sh
-git clone https://github.com/kaihere14/DaemonDoc && cd DaemonDoc
+git clone https://github.com/kaihere14/LivingREADME && cd LivingREADME
 pnpm install
 
 # MongoDB and Redis in Docker
@@ -141,7 +141,7 @@ GitHub must be able to reach `/api/github/webhookhandler` to deliver pushes, so 
 ```env
 PORT=3000
 NODE_ENV=development
-MONGO_URI=mongodb://localhost:27017/daemondoc
+MONGO_URI=mongodb://localhost:27017/livingreadme
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=
@@ -196,8 +196,8 @@ NEXT_PUBLIC_APP_URL=http://localhost:5173
 To run the API in Docker instead:
 
 ```sh
-docker build -t daemondoc-server ./server
-docker run -p 3000:3000 --env-file server/.env daemondoc-server
+docker build -t livingreadme-server ./server
+docker run -p 3000:3000 --env-file server/.env livingreadme-server
 ```
 
 <details>
@@ -250,7 +250,7 @@ docker run -p 3000:3000 --env-file server/.env daemondoc-server
 - [ ] Pull request reviews with line comments
 - [ ] Code search across the whole repo for richer context
 
-Ideas are welcome in [issues](https://github.com/kaihere14/DaemonDoc/issues).
+Ideas are welcome in [issues](https://github.com/kaihere14/LivingREADME/issues).
 
 ## Contributing
 
@@ -274,21 +274,21 @@ pnpm test
 
 ## About the name
 
-A daemon is a program that runs in the background without anyone starting it by hand, like the processes that keep a server alive. DaemonDoc is one for your documentation: it waits for a push, does its work, and gets out of the way. The mascot is a friendly blue imp, a nod to the older meaning of the word.
+A daemon is a program that runs in the background without anyone starting it by hand, like the processes that keep a server alive. LivingREADME is one for your documentation: it waits for a push, does its work, and gets out of the way. The mascot is a friendly blue imp, a nod to the older meaning of the word.
 
 ## Star history
 
-<a href="https://star-history.com/#kaihere14/DaemonDoc&Date">
+<a href="https://star-history.com/#kaihere14/LivingREADME&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kaihere14/DaemonDoc&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kaihere14/DaemonDoc&type=Date" />
-    <img alt="Star history for kaihere14/DaemonDoc" src="https://api.star-history.com/svg?repos=kaihere14/DaemonDoc&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date" />
+    <img alt="Star history for kaihere14/LivingREADME" src="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date" />
   </picture>
 </a>
 
 ## License
 
-DaemonDoc is licensed under the [GNU Affero General Public License v3.0](LICENSE).
+LivingREADME is licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
 <p align="center">
   <sub>Made by <a href="https://x.com/ArmanKiyotaka">@ArmanKiyotaka</a></sub>

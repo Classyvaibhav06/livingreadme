@@ -9,7 +9,7 @@ const README_GENERATION_ACTIONS = [
 ];
 
 // A skipped run means the README already covered the repo, which is as good
-// an outcome as a fresh commit for someone checking that DaemonDoc works.
+// an outcome as a fresh commit for someone checking that LivingREADME works.
 const SETTLED_RUN_STATUSES = ["success", "skipped"];
 
 export const ONBOARDING_EVENTS = [
@@ -49,7 +49,7 @@ export async function getOnboardingState(user) {
   const logUserId = String(user._id);
 
   // Only a repo that is on right now counts: the step promises that pushes
-  // reach DaemonDoc, which stops being true once every repo is turned off.
+  // reach LivingREADME, which stops being true once every repo is turned off.
   const [enabledRepo, settledRun, latestRun] = await Promise.all([
     ActiveRepo.exists({ userId: user._id, active: true }),
     UserLogModel.findOne({

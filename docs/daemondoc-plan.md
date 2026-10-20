@@ -1,4 +1,4 @@
-# DaemonDoc — Complete Plan
+# LivingREADME — Complete Plan
 
 ---
 
@@ -526,11 +526,11 @@ v2InstallationId: { type: Number }
 
 **Step 1: Register and deploy the GitHub App**
 
-Before any user touches anything, the GitHub App is live with its webhook URL pointing at v2's endpoint (`api-v2.daemondoc.online/webhooks/github`). v1's webhook URL stays alive in parallel. Both systems run simultaneously.
+Before any user touches anything, the GitHub App is live with its webhook URL pointing at v2's endpoint (`api-v2.livingreadme.com/webhooks/github`). v1's webhook URL stays alive in parallel. Both systems run simultaneously.
 
 **Step 2: Show migration banner in v1 dashboard**
 
-When a user logs into v1, show a persistent banner: "DaemonDoc v2 is here — install the GitHub App to unlock RAG-powered README generation and code review." One button: "Install GitHub App" — links directly to the GitHub App's public install URL. A user who ignores this keeps getting READMEs generated via v1. No interruption.
+When a user logs into v1, show a persistent banner: "LivingREADME v2 is here — install the GitHub App to unlock RAG-powered README generation and code review." One button: "Install GitHub App" — links directly to the GitHub App's public install URL. A user who ignores this keeps getting READMEs generated via v1. No interruption.
 
 **Step 3: User clicks install**
 
@@ -631,4 +631,4 @@ Zero downtime. No README generation gap. No user action beyond clicking "Install
 
 - New landing page live
 - Product Hunt + X launch post
-- DaemonDoc v2 announcement to existing users
+- LivingREADME v2 announcement to existing users

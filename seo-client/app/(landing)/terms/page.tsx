@@ -8,10 +8,10 @@ import {
 } from "../_components/SubPage";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - DaemonDoc",
+  title: "Terms of Service - LivingREADME",
   description:
-    "The terms that govern your use of DaemonDoc, the automated README generation and sync service for GitHub repositories.",
-  alternates: { canonical: "https://www.daemondoc.online/terms" },
+    "The terms that govern your use of LivingREADME, the automated README generation and sync service for GitHub repositories.",
+  alternates: { canonical: "https://www.livingreadme.com/terms" },
 };
 
 const SECTIONS: LegalSection[] = [
@@ -19,8 +19,8 @@ const SECTIONS: LegalSection[] = [
     heading: "Acceptance of terms",
     body: (
       <p>
-        By creating an account or using DaemonDoc, you agree to these terms. If
-        you use DaemonDoc on behalf of an organisation, you confirm you are
+        By creating an account or using LivingREADME, you agree to these terms. If
+        you use LivingREADME on behalf of an organisation, you confirm you are
         authorised to accept them for that organisation.
       </p>
     ),
@@ -29,7 +29,7 @@ const SECTIONS: LegalSection[] = [
     heading: "The service",
     body: (
       <p>
-        DaemonDoc connects to GitHub repositories you choose, analyses their
+        LivingREADME connects to GitHub repositories you choose, analyses their
         code and generates or updates README documentation, including by
         committing changes to those repositories when you enable it. Features
         may change, be added or be removed as the product evolves.
@@ -66,7 +66,7 @@ const SECTIONS: LegalSection[] = [
     heading: "Acceptable use",
     body: (
       <ul>
-        <li>Do not use DaemonDoc to process code you have no right to use.</li>
+        <li>Do not use LivingREADME to process code you have no right to use.</li>
         <li>
           Do not attempt to disrupt, overload or reverse engineer the service.
         </li>
@@ -91,7 +91,7 @@ const SECTIONS: LegalSection[] = [
     heading: "Availability and disclaimers",
     body: (
       <p>
-        DaemonDoc is provided &ldquo;as is&rdquo; and &ldquo;as
+        LivingREADME is provided &ldquo;as is&rdquo; and &ldquo;as
         available&rdquo;, without warranties of any kind. We do not guarantee
         the service will be uninterrupted or error-free, and to the extent
         permitted by law we are not liable for indirect or consequential losses
@@ -103,7 +103,7 @@ const SECTIONS: LegalSection[] = [
     heading: "Termination",
     body: (
       <p>
-        You can stop using DaemonDoc and revoke its GitHub access at any time.
+        You can stop using LivingREADME and revoke its GitHub access at any time.
         We may suspend or end access for accounts that breach these terms.
       </p>
     ),
@@ -123,7 +123,7 @@ const SECTIONS: LegalSection[] = [
       <p>
         Questions about these terms? Open an issue on{" "}
         <a
-          href="https://github.com/kaihere14/daemondoc"
+          href="https://github.com/kaihere14/livingreadme"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -141,7 +141,7 @@ export default function TermsPage() {
       <PageHeader
         eyebrow="Legal"
         title="Terms of Service"
-        description="The ground rules for using DaemonDoc, in plain language."
+        description="The ground rules for using LivingREADME, in plain language."
       />
       <LegalDocument updated="October 5, 2026" sections={SECTIONS} />
     </SubPageShell>

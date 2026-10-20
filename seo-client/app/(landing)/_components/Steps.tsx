@@ -36,7 +36,7 @@ const Steps: FC = () => {
       className={`${SECTION_X} ${SECTION_Y}`}
     >
       <h2 id="hero-steps" className="sr-only">
-        How DaemonDoc works
+        How LivingREADME works
       </h2>
       <div className="relative mx-auto grid max-w-4xl grid-cols-1 gap-10 text-center md:grid-cols-3">
         {STEPS.map((step, i) => (

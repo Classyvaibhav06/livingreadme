@@ -54,7 +54,7 @@ const Home = () => {
     : true;
 
   // New accounts meet Cleanup in the onboarding checklist instead, so the
-  // announcement is only for people who used DaemonDoc before it existed.
+  // announcement is only for people who used LivingREADME before it existed.
   const showCleanupIntro =
     Boolean(user?.githubUsername) &&
     !loading &&
@@ -131,7 +131,7 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Dashboard - DaemonDoc | Manage Your Repositories"
+        title="Dashboard - LivingREADME | Manage Your Repositories"
         description="Manage AI-powered README updates for your GitHub repositories. View, enable, and configure automatic documentation generation."
         ogUrl={`${APP_ORIGIN}/home`}
         canonical={`${APP_ORIGIN}/home`}

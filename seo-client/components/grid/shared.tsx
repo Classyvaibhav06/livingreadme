@@ -217,7 +217,7 @@ export const PulseBorderIcon = ({ className }: { className?: string }) => {
           src="/mascot-bust.png"
           width={364}
           height={480}
-          alt="DaemonDoc"
+          alt="LivingREADME"
           className="h-9 w-auto"
         />
       </div>

@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
 import "./globals.css";
 
-// Body/UI font — self-hosted from public/, same setup as daemondoc-v2
+// Body/UI font — self-hosted from public/, same setup as livingreadme-v2
 const interDisplay = localFont({
   src: "../public/inter-display.p.woff2",
   variable: "--font-inter-display",
@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://daemondoc.online"),
+  metadataBase: new URL("https://livingreadme.com"),
   icons: {
     icon: "/siteLogo.png",
   },

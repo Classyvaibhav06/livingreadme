@@ -25,7 +25,7 @@ export const sendEmail = async (
   const html = await getEmailTemplate(content);
 
   const response = await resend.emails.send({
-    from: "DaemonDoc<no-reply@daemondoc.online>",
+    from: "LivingREADME<no-reply@livingreadme.com>",
     to,
     subject,
     html,

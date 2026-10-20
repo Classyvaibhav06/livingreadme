@@ -1,8 +1,8 @@
-# DaemonDoc — Set and Forget AI README generator for GitHub
+# LivingREADME — Set and Forget AI README generator for GitHub
 
 ## Summary
 
-DaemonDoc is a Webhook-driven README sync engine: activate a repository once, and every push to the default branch automatically triggers an AI documentation update committed back to GitHub — no manual effort required. Built on a MERN + Convex stack with a BullMQ/Redis async queue, the system decouples webhook ingestion from generation so GitHub webhooks return instantly while long-running AI work runs in the background. Documentation updates use Deterministic Patching — SHA-256 section hashes stored on each repository record identify only the sections affected by a commit diff, enabling surgical AST-based patching rather than full-document regeneration on every push.
+LivingREADME is a Webhook-driven README sync engine: activate a repository once, and every push to the default branch automatically triggers an AI documentation update committed back to GitHub — no manual effort required. Built on a MERN + Convex stack with a BullMQ/Redis async queue, the system decouples webhook ingestion from generation so GitHub webhooks return instantly while long-running AI work runs in the background. Documentation updates use Deterministic Patching — SHA-256 section hashes stored on each repository record identify only the sections affected by a commit diff, enabling surgical AST-based patching rather than full-document regeneration on every push.
 
 ## Key Features
 
@@ -21,10 +21,10 @@ DaemonDoc is a Webhook-driven README sync engine: activate a repository once, an
 
 ## Docs
 
-- Site: https://daemondoc.online
-- LLM discovery: https://daemondoc.online/llms.txt
-- README: https://raw.githubusercontent.com/kaihere14/daemondoc/main/README.md
-- README-AI (GitHub topics + technical explainer): https://raw.githubusercontent.com/kaihere14/daemondoc/main/README-AI.md
-- Agent instruction set: https://raw.githubusercontent.com/kaihere14/daemondoc/main/docs/ai-context.md
-- Architecture context: https://raw.githubusercontent.com/kaihere14/daemondoc/main/context/architecture-context.md
-- Project overview: https://raw.githubusercontent.com/kaihere14/daemondoc/main/context/project-overview.md
+- Site: https://livingreadme.com
+- LLM discovery: https://livingreadme.com/llms.txt
+- README: https://raw.githubusercontent.com/kaihere14/livingreadme/main/README.md
+- README-AI (GitHub topics + technical explainer): https://raw.githubusercontent.com/kaihere14/livingreadme/main/README-AI.md
+- Agent instruction set: https://raw.githubusercontent.com/kaihere14/livingreadme/main/docs/ai-context.md
+- Architecture context: https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/architecture-context.md
+- Project overview: https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/project-overview.md

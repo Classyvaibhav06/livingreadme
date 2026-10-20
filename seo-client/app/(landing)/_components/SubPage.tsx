@@ -6,7 +6,7 @@ import { SECTION_X, SECTION_Y } from "@/app/(landing)/_lib/section";
 import { CandyLink } from "@/components/ui/candy-button";
 
 const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.daemondoc.online";
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.livingreadme.com";
 
 /** The chrome every page other than the home page shares. */
 export function SubPageShell({ children }: { children: React.ReactNode }) {
@@ -61,7 +61,7 @@ export function CtaBand() {
             Push once. Sync forever.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg font-light tracking-[-0.012em] text-slate-600">
-            Connect a repository in under a minute and let DaemonDoc keep its
+            Connect a repository in under a minute and let LivingREADME keep its
             README current on every push.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

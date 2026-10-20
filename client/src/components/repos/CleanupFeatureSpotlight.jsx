@@ -102,7 +102,7 @@ const CleanupFeatureSpotlight = ({ open, onDismiss }) => {
               </h2>
 
               <p className="mb-5 text-sm leading-relaxed text-slate-500">
-                Tap the brush icon on any repo card. DaemonDoc uses AI to
+                Tap the brush icon on any repo card. LivingREADME uses AI to
                 restructure cluttered READMEs — merge duplicate sections, trim
                 noise, and keep what matters — then commits to your default
                 branch with{" "}

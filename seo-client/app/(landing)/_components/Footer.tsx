@@ -20,7 +20,7 @@ const DIRECTORY_BADGE =
 export function UsefulShelfBadge() {
   return (
     <a
-      href="https://usefulshelf.co/?utm_source=daemondoc.online&amp;utm_medium=referral&amp;utm_campaign=badge&amp;utm_content=lime"
+      href="https://usefulshelf.co/?utm_source=livingreadme.com&amp;utm_medium=referral&amp;utm_campaign=badge&amp;utm_content=lime"
       target="_blank"
       rel="noopener"
       className={DIRECTORY_BADGE}
@@ -80,7 +80,7 @@ export default function Footer() {
                 className="h-16 w-auto"
               />
               <span className="font-display pb-1 text-2xl font-semibold tracking-tight text-slate-900">
-                DaemonDoc
+                LivingREADME
               </span>
             </div>
             <p className="max-w-xs text-sm leading-relaxed font-light text-slate-600">
@@ -127,7 +127,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-8 md:flex-row">
           <div className="flex items-center gap-8">
             <span className="text-sm text-slate-500">
-              © {currentYear} DaemonDoc Inc.
+              © {currentYear} LivingREADME Inc.
             </span>
           </div>
 
@@ -144,7 +144,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://github.com/kaihere14/daemondoc"
+              href="https://github.com/kaihere14/livingreadme"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded text-slate-400 transition-colors hover:text-slate-900"

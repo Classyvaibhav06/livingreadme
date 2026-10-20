@@ -38,25 +38,25 @@ const STATUS_STYLES = {
 const runs = [
   {
     action: "Full README Rewrite",
-    repo: "daemondoc/server",
+    repo: "livingreadme/server",
     time: "2m ago",
     status: "success",
   },
   {
     action: "Targeted Section Patch",
-    repo: "daemondoc/seo-client",
+    repo: "livingreadme/seo-client",
     time: "12m ago",
     status: "success",
   },
   {
     action: "README Cleanup",
-    repo: "daemondoc/client",
+    repo: "livingreadme/client",
     time: "28m ago",
     status: "ongoing",
   },
   {
     action: "Full README Rewrite",
-    repo: "daemondoc/convex-server",
+    repo: "livingreadme/convex-server",
     time: "1h ago",
     status: "skipped",
   },

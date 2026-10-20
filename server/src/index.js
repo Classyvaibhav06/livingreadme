@@ -17,9 +17,9 @@ const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     origin: [
-      "https://daemondoc.online",
-      "https://app.daemondoc.online",
-      "https://www.daemondoc.online",
+      "https://livingreadme.com",
+      "https://app.livingreadme.com",
+      "https://www.livingreadme.com",
       "http://localhost:5173",
     ],
     credentials: true,

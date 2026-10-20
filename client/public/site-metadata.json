@@ -1,8 +1,8 @@
 {
-  "name": "DaemonDoc",
-  "url": "https://daemondoc.online",
+  "name": "LivingREADME",
+  "url": "https://livingreadme.com",
   "tagline": "Set and Forget AI README generator for GitHub",
-  "description": "Webhook-driven, AST-based README automation. Push code; DaemonDoc patches only the affected README sections using SHA-256 section hashes — no manual documentation effort required.",
+  "description": "Webhook-driven, AST-based README automation. Push code; LivingREADME patches only the affected README sections using SHA-256 section hashes — no manual documentation effort required.",
   "keywords": [
     "README automation",
     "continuous documentation sync",
@@ -45,10 +45,10 @@
     "free and open source — no usage limits, no paid tiers"
   ],
   "docs": {
-    "readme": "https://raw.githubusercontent.com/kaihere14/daemondoc/main/README.md",
-    "readme_ai": "https://raw.githubusercontent.com/kaihere14/daemondoc/main/README-AI.md",
-    "ai_context": "https://raw.githubusercontent.com/kaihere14/daemondoc/main/docs/ai-context.md",
-    "architecture": "https://raw.githubusercontent.com/kaihere14/daemondoc/main/context/architecture-context.md",
-    "llms_txt": "https://daemondoc.online/llms.txt"
+    "readme": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/README.md",
+    "readme_ai": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/README-AI.md",
+    "ai_context": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/docs/ai-context.md",
+    "architecture": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/architecture-context.md",
+    "llms_txt": "https://livingreadme.com/llms.txt"
   }
 }
