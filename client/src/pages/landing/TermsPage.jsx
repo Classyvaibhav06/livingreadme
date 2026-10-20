@@ -1,0 +1,147 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { SubPageShell, PageHeader, LegalDocument } from "./components/SubPage";
+
+const SECTIONS = [
+  {
+    heading: "Acceptance of terms",
+    body: (
+      <p>
+        By creating an account or using LivingREADME, you agree to these terms.
+        If you use LivingREADME on behalf of an organisation, you confirm you
+        are authorised to accept them for that organisation.
+      </p>
+    ),
+  },
+  {
+    heading: "The service",
+    body: (
+      <p>
+        LivingREADME connects to GitHub repositories you choose, analyses their
+        code and generates or updates README documentation, including by
+        committing changes to those repositories when you enable it. Features
+        may change, be added or be removed as the product evolves.
+      </p>
+    ),
+  },
+  {
+    heading: "Your account",
+    body: (
+      <p>
+        You sign in with GitHub and are responsible for activity under your
+        account. Only connect repositories you own or have permission to modify,
+        and keep your GitHub account secure.
+      </p>
+    ),
+  },
+  {
+    heading: "Your content",
+    body: (
+      <>
+        <p>
+          You keep all rights to your code and to the documentation generated
+          for it. You grant us a limited licence to access and process your
+          repository content solely to provide the service.
+        </p>
+        <p>
+          How we handle that content is described in our{" "}
+          <Link to="/privacy">Privacy Policy</Link>.
+        </p>
+      </>
+    ),
+  },
+  {
+    heading: "Acceptable use",
+    body: (
+      <ul>
+        <li>
+          Do not use LivingREADME to process code you have no right to use.
+        </li>
+        <li>
+          Do not attempt to disrupt, overload or reverse engineer the service.
+        </li>
+        <li>
+          Do not use the service to generate unlawful, harmful or misleading
+          content.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    heading: "AI-generated output",
+    body: (
+      <p>
+        Documentation is produced by AI models and may contain mistakes or
+        omissions. Review generated content before relying on it; you are
+        responsible for what is published in your repositories.
+      </p>
+    ),
+  },
+  {
+    heading: "Availability and disclaimers",
+    body: (
+      <p>
+        LivingREADME is provided &ldquo;as is&rdquo; and &ldquo;as
+        available&rdquo;, without warranties of any kind. We do not guarantee
+        the service will be uninterrupted or error-free, and to the extent
+        permitted by law we are not liable for indirect or consequential losses
+        arising from its use.
+      </p>
+    ),
+  },
+  {
+    heading: "Termination",
+    body: (
+      <p>
+        You can stop using LivingREADME and revoke its GitHub access at any
+        time. We may suspend or end access for accounts that breach these terms.
+      </p>
+    ),
+  },
+  {
+    heading: "Changes to these terms",
+    body: (
+      <p>
+        We may revise these terms from time to time. Continued use after an
+        update means you accept the revised terms.
+      </p>
+    ),
+  },
+  {
+    heading: "Contact",
+    body: (
+      <p>
+        Questions about these terms? Open an issue on{" "}
+        <a
+          href="https://github.com/kaihere14/livingreadme"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>{" "}
+        or reach out on{" "}
+        <a
+          href="https://x.com/armankiyotaka"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          X
+        </a>
+        .
+      </p>
+    ),
+  },
+];
+
+export default function TermsPage() {
+  return (
+    <SubPageShell>
+      <PageHeader
+        eyebrow="Legal"
+        title="Terms of Service"
+        description="The ground rules for using LivingREADME, in plain language."
+      />
+      <LegalDocument updated="October 5, 2026" sections={SECTIONS} />
+    </SubPageShell>
+  );
+}
