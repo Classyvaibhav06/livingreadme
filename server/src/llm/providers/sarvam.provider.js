@@ -1,52 +1,44 @@
-// npm i sarvamai@1.1.8-alpha.5
-import { SarvamAIClient } from "sarvamai";
+import axios from "axios";
 import { buildDetectPrompt } from "../prompts/detect.prompt.js";
 import { buildCleanupPrompt } from "../prompts/cleanup.prompt.js";
 import { extractJson } from "../utils/response.js";
 import { providerLog } from "../../utils/logger.js";
 
-const log = providerLog("Sarvam");
+const log = providerLog("DeepSeek");
 
-// Sarvam ships no AI SDK adapter, so this provider talks to the vendor client
-// directly. It exposes the same surface as GeminiProvider (getName/detect/
-// generate) so the orchestration layer can swap one for the other blindly.
-const MODEL = "sarvam-105b-conversations";
+// Radox AI endpoint for DeepSeek chat completions
+const DEFAULT_BASE_URL = "https://radoxai.com/v1";
+const DEFAULT_MODEL = "deepseek-v4-flash-0731";
+const FALLBACK_API_KEY = "cc_2JMGolaUmma875KoOjFURWTiUCBWBLZfDLiUQjvAf61qM6fo";
 
-// Sarvam's context window is 32K tokens for prompt + completion combined —
-// far tighter than Gemini. Reserve headroom for the generated README and let
-// the rest go to the prompt. The generation pipeline reads getContextTokenLimit()
-// and trims the repository context down to this budget before calling Sarvam;
-// the Gemini fallback keeps the full, untrimmed context.
-const CONTEXT_WINDOW_TOKENS = 32_000;
+// DeepSeek's context window is 64K+ tokens for prompt + completion combined.
+// Reserve headroom for the generated README and let the rest go to the prompt.
+const CONTEXT_WINDOW_TOKENS = 64_000;
 const COMPLETION_RESERVE_TOKENS = 8_000;
 const PROMPT_TOKEN_BUDGET = CONTEXT_WINDOW_TOKENS - COMPLETION_RESERVE_TOKENS;
 
 // Rough chars-per-token, matching the estimate the pipelines use elsewhere.
 const MAX_PROMPT_CHARS = PROMPT_TOKEN_BUDGET * 4;
 
-// detect/cleanup embed the existing README at the very end of the prompt,
-// followed only by a closing marker, so clamping the README text is a safe
-// way to keep those single-shot calls inside the window.
 function clampReadme(existingReadme) {
   const text = (existingReadme || "").trim();
   if (text.length <= MAX_PROMPT_CHARS) return text;
 
-  log.warn("Existing README exceeds Sarvam window — clamping", {
+  log.warn("Existing README exceeds context window — clamping", {
     chars: text.length,
     limit: MAX_PROMPT_CHARS,
   });
-  return `${text.slice(0, MAX_PROMPT_CHARS)}\n\n... (truncated to fit Sarvam's context window)`;
+  return `${text.slice(0, MAX_PROMPT_CHARS)}\n\n... (truncated to fit context window)`;
 }
 
-// The vendor client throws several error shapes (HTTP error, network error,
-// SDK validation error), and none of them alone reads as a usable log line.
 function describe(error) {
-  const status = error?.statusCode ?? error?.status;
+  const status = error?.response?.status ?? error?.statusCode ?? error?.status;
+  const data = error?.response?.data;
   const body =
-    typeof error?.body === "string"
-      ? error.body.slice(0, 200)
-      : error?.body
-        ? JSON.stringify(error.body).slice(0, 200)
+    typeof data === "string"
+      ? data.slice(0, 200)
+      : data
+        ? JSON.stringify(data).slice(0, 200)
         : null;
 
   const prefix = status ? `HTTP ${status}` : "network error";
@@ -54,30 +46,31 @@ function describe(error) {
 }
 
 export class SarvamProvider {
-  constructor() {
-    this.name = "Sarvam";
-    this.apiKey = process.env.SARVAM_API_KEY?.trim();
-    this.client = this.apiKey
-      ? new SarvamAIClient({ apiKey: this.apiKey })
-      : null;
+  constructor(options = {}) {
+    this.name = "DeepSeek";
+    this.apiKey =
+      options.apiKey ??
+      process.env.RADOX_API_KEY?.trim() ??
+      process.env.SARVAM_API_KEY?.trim() ??
+      (process.env.NODE_ENV === "test" ? null : FALLBACK_API_KEY);
+    this.baseUrl =
+      options.baseUrl ?? process.env.RADOX_BASE_URL?.trim() ?? DEFAULT_BASE_URL;
+    this.model =
+      options.model ?? process.env.RADOX_MODEL?.trim() ?? DEFAULT_MODEL;
   }
 
   getName() {
     return this.name;
   }
 
-  // Prompt-token budget the generation pipeline trims the context to before
-  // handing a prompt to this provider.
   getContextTokenLimit() {
     return PROMPT_TOKEN_BUDGET;
   }
 
-  // Single entry point for every call, so key checks, logging and empty
-  // responses are handled once instead of per method.
-  async #call(label, prompt) {
-    if (!this.client) {
+  async #call(label, prompt, { temperature = 0.2 } = {}) {
+    if (!this.apiKey) {
       throw new Error(
-        "No Sarvam API key configured — set SARVAM_API_KEY to enable the fallback provider.",
+        "No API key configured for fallback provider — set RADOX_API_KEY or SARVAM_API_KEY.",
       );
     }
 
@@ -85,26 +78,42 @@ export class SarvamProvider {
 
     let response;
     try {
-      response = await this.client.chat.completions({
-        model: MODEL,
-        messages: [{ role: "user", content: prompt }],
-      });
+      response = await axios.post(
+        `${this.baseUrl}/chat/completions`,
+        {
+          model: this.model,
+          messages: [{ role: "user", content: prompt }],
+          temperature,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${this.apiKey}`,
+            "Content-Type": "application/json",
+          },
+          timeout: 90_000,
+        },
+      );
     } catch (error) {
       log.error(`${label} call failed`, {
-        model: MODEL,
+        model: this.model,
         detail: describe(error),
       });
       throw error;
     }
 
-    const content = response?.choices?.[0]?.message?.content;
+    const rawContent = response?.data?.choices?.[0]?.message?.content;
 
-    if (!content) {
-      throw new Error(`Sarvam returned an empty ${label} response`);
+    if (!rawContent) {
+      throw new Error(`${this.name} returned an empty ${label} response`);
     }
 
+    // Strip reasoning <think>...</think> tags if emitted by DeepSeek
+    const content = rawContent
+      .replace(/<think>[\s\S]*?<\/think>\s*/gi, "")
+      .trim();
+
     log.info(`${label} call completed`, {
-      model: MODEL,
+      model: this.model,
       durationMs: Date.now() - startedAt,
     });
 
@@ -112,13 +121,14 @@ export class SarvamProvider {
   }
 
   async generate(prompt) {
-    return this.#call("generation", prompt);
+    return this.#call("generation", prompt, { temperature: 0.2 });
   }
 
   async detect(existingReadme) {
     const content = await this.#call(
       "detection",
       buildDetectPrompt(clampReadme(existingReadme)),
+      { temperature: 0.1 },
     );
 
     return extractJson(content);
@@ -128,6 +138,9 @@ export class SarvamProvider {
     return this.#call(
       "cleanup",
       buildCleanupPrompt(clampReadme(existingReadme)),
+      { temperature: 0.1 },
     );
   }
 }
+
+export { SarvamProvider as RadoxProvider };

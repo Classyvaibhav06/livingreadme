@@ -19,6 +19,8 @@ export const createProvidersInstances = (
         return new GeminiProvider(geminiConfig);
 
       case "sarvam":
+      case "radox":
+      case "deepseek":
         return new SarvamProvider();
 
       default:
