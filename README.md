@@ -118,7 +118,7 @@ MongoDB stores users, connected repos and run history. Redis backs the job and e
 LivingREADME needs Node.js 20 or newer, [pnpm](https://pnpm.io) 10, MongoDB and Redis. You also need a GitHub OAuth app, a [Convex](https://convex.dev) deployment and a Gemini API key.
 
 ```sh
-git clone https://github.com/kaihere14/LivingREADME && cd LivingREADME
+git clone https://github.com/Classyvaibhav06/livingreadme && cd livingreadme
 pnpm install
 
 # MongoDB and Redis in Docker
@@ -250,7 +250,7 @@ docker run -p 3000:3000 --env-file server/.env livingreadme-server
 - [ ] Pull request reviews with line comments
 - [ ] Code search across the whole repo for richer context
 
-Ideas are welcome in [issues](https://github.com/kaihere14/LivingREADME/issues).
+Ideas are welcome in [issues](https://github.com/Classyvaibhav06/livingreadme/issues).
 
 ## Contributing
 
@@ -268,7 +268,7 @@ pnpm test
 - [Express 5](https://expressjs.com) with [BullMQ](https://bullmq.io) on [Redis](https://redis.io)
 - [MongoDB](https://www.mongodb.com) and [Mongoose](https://mongoosejs.com)
 - [Convex](https://convex.dev) for live logs
-- The [AI SDK](https://ai-sdk.dev) with [Google Gemini](https://ai.google.dev), and [Sarvam AI](https://www.sarvam.ai)
+- The [AI SDK](https://ai-sdk.dev) with [Google Gemini](https://ai.google.dev), and DeepSeek
 - [Resend](https://resend.com) for email
 - [Tailwind CSS 4](https://tailwindcss.com) and [Lucide](https://lucide.dev) icons
 
@@ -278,11 +278,11 @@ A daemon is a program that runs in the background without anyone starting it by 
 
 ## Star history
 
-<a href="https://star-history.com/#kaihere14/LivingREADME&Date">
+<a href="https://star-history.com/#Classyvaibhav06/livingreadme&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date" />
-    <img alt="Star history for kaihere14/LivingREADME" src="https://api.star-history.com/svg?repos=kaihere14/LivingREADME&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date" />
+    <img alt="Star history for Classyvaibhav06/livingreadme" src="https://api.star-history.com/svg?repos=Classyvaibhav06/livingreadme&type=Date" />
   </picture>
 </a>
 
@@ -291,5 +291,5 @@ A daemon is a program that runs in the background without anyone starting it by 
 LivingREADME is licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
 <p align="center">
-  <sub>Made by <a href="https://x.com/ArmanKiyotaka">@ArmanKiyotaka</a></sub>
+  <sub>Made by <a href="https://github.com/Classyvaibhav06">@Classyvaibhav06</a></sub>
 </p>

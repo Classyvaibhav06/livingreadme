@@ -125,7 +125,7 @@ const SECTIONS: LegalSection[] = [
       <p>
         Questions about these terms? Open an issue on{" "}
         <a
-          href="https://github.com/kaihere14/livingreadme"
+          href="https://github.com/Classyvaibhav06/livingreadme"
           target="_blank"
           rel="noopener noreferrer"
         >

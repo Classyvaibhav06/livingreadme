@@ -23,8 +23,8 @@ LivingREADME is a Webhook-driven README sync engine: activate a repository once,
 
 - Site: https://livingreadme.com
 - LLM discovery: https://livingreadme.com/llms.txt
-- README: https://raw.githubusercontent.com/kaihere14/livingreadme/main/README.md
-- README-AI (GitHub topics + technical explainer): https://raw.githubusercontent.com/kaihere14/livingreadme/main/README-AI.md
-- Agent instruction set: https://raw.githubusercontent.com/kaihere14/livingreadme/main/docs/ai-context.md
-- Architecture context: https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/architecture-context.md
-- Project overview: https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/project-overview.md
+- README: https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/README.md
+- README-AI (GitHub topics + technical explainer): https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/README-AI.md
+- Agent instruction set: https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/docs/ai-context.md
+- Architecture context: https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/context/architecture-context.md
+- Project overview: https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/context/project-overview.md

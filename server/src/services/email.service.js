@@ -16,7 +16,7 @@ export const getEmailTemplate = async (data) => {
 export const sendEmail = async (
   subject,
   content,
-  to = "armanthakur200814@gmail.com",
+  to = "vaibhav7290119@gmail.com",
 ) => {
   if (!content || typeof content !== "object") {
     throw new Error("Email content is required and must be an object");

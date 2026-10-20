@@ -45,10 +45,10 @@
     "free and open source — no usage limits, no paid tiers"
   ],
   "docs": {
-    "readme": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/README.md",
-    "readme_ai": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/README-AI.md",
-    "ai_context": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/docs/ai-context.md",
-    "architecture": "https://raw.githubusercontent.com/kaihere14/livingreadme/main/context/architecture-context.md",
+    "readme": "https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/README.md",
+    "readme_ai": "https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/README-AI.md",
+    "ai_context": "https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/docs/ai-context.md",
+    "architecture": "https://raw.githubusercontent.com/Classyvaibhav06/livingreadme/main/context/architecture-context.md",
     "llms_txt": "https://livingreadme.com/llms.txt"
   }
 }

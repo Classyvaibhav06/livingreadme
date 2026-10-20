@@ -38,8 +38,8 @@ services:
       if (!db.users.findOne({ githubId: githubId })) {
         db.users.insertOne({
           githubId: "319204766",
-          githubUsername: "mirenox14",
-          email: "armanthakur200814@gmail.com",
+          githubUsername: "Classyvaibhav06",
+          email: "vaibhav7290119@gmail.com",
           autoReadmeEnabled: true,
           avatarUrl: "https://avatars.githubusercontent.com/u/319204766?v=4",
           emailNotificationsEnabled: true,

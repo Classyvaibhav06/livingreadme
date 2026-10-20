@@ -116,7 +116,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://x.com/armankiyotaka"
+              href="https://github.com/Classyvaibhav06"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded text-slate-400 transition-colors hover:text-slate-900"
@@ -127,7 +127,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://github.com/kaihere14/livingreadme"
+              href="https://github.com/Classyvaibhav06/livingreadme"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded text-slate-400 transition-colors hover:text-slate-900"
