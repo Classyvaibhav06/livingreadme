@@ -132,7 +132,7 @@ export class LlmService {
       });
       liveUpdate(
         sharedLogId,
-        "Primary model unavailable — switching to backup",
+        `Primary model unavailable (${error.message}) — switching to backup`,
       );
 
       return await providers[1].cleanup(existingReadme);

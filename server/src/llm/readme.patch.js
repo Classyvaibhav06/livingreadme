@@ -370,7 +370,10 @@ export async function patchReadme({
       fallback: fallBackProvider.getName(),
       detail: error.message,
     });
-    liveUpdate(sharedLogId, "Primary model unavailable — switching to backup");
+    liveUpdate(
+      sharedLogId,
+      `Primary model unavailable (${error.message}) — switching to backup`,
+    );
 
     const fallback = buildProviderPrompt({
       provider: fallBackProvider,

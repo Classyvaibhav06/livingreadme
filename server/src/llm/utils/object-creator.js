@@ -10,10 +10,7 @@ export const createProvidersInstances = (
   SarvamProvider,
   TokenHarborProvider,
 ) => {
-  const useTokenHarborAsMain =
-    TokenHarborProvider &&
-    (Boolean(process.env.TOKENHARBOR_API_KEY) ||
-      process.env.USE_TOKENHARBOR_AS_MAIN === "true");
+  const useTokenHarborAsMain = Boolean(TokenHarborProvider);
 
   if (!providerPriority) {
     const primary = useTokenHarborAsMain
