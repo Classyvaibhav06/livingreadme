@@ -94,6 +94,7 @@ describe("LlmService.generate", () => {
       ["sarvam", "gemini"],
       expect.any(Function),
       expect.any(Function),
+      expect.any(Function),
     );
   });
 });

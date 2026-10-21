@@ -8,14 +8,31 @@ export const createProvidersInstances = (
   providerPriority,
   GeminiProvider,
   SarvamProvider,
+  TokenHarborProvider,
 ) => {
+  const useTokenHarborAsMain =
+    TokenHarborProvider &&
+    (Boolean(process.env.TOKENHARBOR_API_KEY) ||
+      process.env.USE_TOKENHARBOR_AS_MAIN === "true");
+
   if (!providerPriority) {
-    return [new GeminiProvider(geminiConfig), new SarvamProvider()];
+    const primary = useTokenHarborAsMain
+      ? new TokenHarborProvider()
+      : new GeminiProvider(geminiConfig);
+    return [primary, new SarvamProvider()];
   }
 
   return providerPriority.map((provider) => {
     switch (provider) {
+      case "tokenharbor":
+        return TokenHarborProvider
+          ? new TokenHarborProvider()
+          : new SarvamProvider();
+
       case "gemini":
+        if (useTokenHarborAsMain) {
+          return new TokenHarborProvider();
+        }
         return new GeminiProvider(geminiConfig);
 
       case "sarvam":

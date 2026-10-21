@@ -2,6 +2,7 @@ import IORedis from "ioredis";
 
 const isTls =
   process.env.REDIS_TLS === "true" ||
+  (process.env.REDIS_URL && process.env.REDIS_URL.startsWith("rediss://")) ||
   (process.env.REDIS_HOST && process.env.REDIS_HOST.includes("upstash.io")) ||
   (process.env.REDIS_URL && process.env.REDIS_URL.includes("upstash.io"));
 

@@ -3,6 +3,7 @@ import { aiLog as log, providerLog } from "../utils/logger.js";
 import { detectReadme, generateReadme } from "./readme.generate.js";
 import { GeminiProvider } from "./providers/gemini.provider.js";
 import { SarvamProvider } from "./providers/sarvam.provider.js";
+import { TokenHarborProvider } from "./providers/tokenharbor.provider.js";
 import { patchReadme } from "./readme.patch.js";
 import { createProvidersInstances } from "./utils/object-creator.js";
 
@@ -29,6 +30,7 @@ export class LlmService {
       providersPriority,
       GeminiProvider,
       SarvamProvider,
+      TokenHarborProvider,
     );
 
     log.info("Resolved LLM provider priority", {
@@ -108,6 +110,7 @@ export class LlmService {
         providersPriority,
         GeminiProvider,
         SarvamProvider,
+        TokenHarborProvider,
       );
       log.info("Resolved LLM provider priority", {
         priority: providersPriority ?? ["gemini", "sarvam"],

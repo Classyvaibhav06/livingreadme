@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 // Every LLM provider the generation pipeline knows how to instantiate. A user's
 // llmProviderPriority is always a full ordering of exactly these values.
-export const SUPPORTED_LLM_PROVIDERS = ["gemini", "sarvam"];
+export const SUPPORTED_LLM_PROVIDERS = ["tokenharbor", "gemini", "sarvam"];
 export const SUPPORTED_COMMIT_TYPES = ["direct", "pull-request"];
 
 const userSchema = new Schema(

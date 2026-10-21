@@ -9,7 +9,6 @@ const log = providerLog("DeepSeek");
 // Radox AI endpoint for DeepSeek chat completions
 const DEFAULT_BASE_URL = "https://radoxai.com/v1";
 const DEFAULT_MODEL = "deepseek-v4-flash-0731";
-const FALLBACK_API_KEY = "cc_2JMGolaUmma875KoOjFURWTiUCBWBLZfDLiUQjvAf61qM6fo";
 
 // DeepSeek's context window is 64K+ tokens for prompt + completion combined.
 // Reserve headroom for the generated README and let the rest go to the prompt.
@@ -51,8 +50,7 @@ export class SarvamProvider {
     this.apiKey =
       options.apiKey ??
       process.env.RADOX_API_KEY?.trim() ??
-      process.env.SARVAM_API_KEY?.trim() ??
-      (process.env.NODE_ENV === "test" ? null : FALLBACK_API_KEY);
+      process.env.SARVAM_API_KEY?.trim();
     this.baseUrl =
       options.baseUrl ?? process.env.RADOX_BASE_URL?.trim() ?? DEFAULT_BASE_URL;
     this.model =
